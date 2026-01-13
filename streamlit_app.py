@@ -287,7 +287,7 @@ elif page == "🔥 High-Risk Districts":
 # ============================================================================
 
 elif page == "⚙️ Friction Signal Analysis":
-    st.markdown('<div class="header-title">⚙️ What's Causing the Friction?</div>', unsafe_allow_html=True)
+    st.markdown("""<div class="header-title">⚙️ What's Causing the Friction?</div>""", unsafe_allow_html=True)
     st.markdown("Analyzing UIS, RIS, BSS, TSD signals to explain AFI")
     st.markdown("---")
     
