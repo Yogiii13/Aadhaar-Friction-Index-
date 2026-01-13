@@ -19,36 +19,68 @@ The Aadhaar Friction Index project provides comprehensive analysis of authentica
 
 ```text
 AADHAAR-FRICTION-INDEX/
-├── datasets/
-│   ├── processed/
-│   │   ├── index/
-│   │   │   ├── aadhaar_friction_index_only.csv
-│   │   │   ├── aadhaar_friction_index_ranked.csv
-│   │   │   └── aadhaar_friction_index.csv
-│   │   ├── signals/
-│   │   │   └── friction_signals.csv
+│
+├── datasets/                           # Data layers
+│   ├── raw/                            # Raw Aadhaar API data
+│   │   ├── api_data_aadhaar_biometric_*.csv
+│   │   ├── api_data_aadhaar_demographic_*.csv
+│   │   └── api_data_aadhaar_enrolment_*.csv
+│   │
+│   ├── processed/                      # Cleaned datasets
 │   │   ├── biometric_updates_cleaned.csv
 │   │   ├── demographic_updates_cleaned.csv
 │   │   └── enrolment_cleaned.csv
-│   └── raw/
-│       ├── api_data_aadhar_biometric_0_500000.csv
-│       ├── api_data_aadhar_demographic_0_500000.csv
-│       └── api_data_aadhar_enrolment_0_500000.csv
-├── notebooks/
-│   ├── 01_exploration.ipynb              # Initial data exploration
-│   ├── 02_friction_signal.ipynb          # Friction signal calculation
-│   └── 03_aadhaar_friction_index_construction.ipynb  # AFI construction
-├── outputs/
-│   ├── plots/                            # Generated visualizations
-│   └── tables/                           # Analysis tables
-├── src/
-│   ├── index.py                          # AFI calculation module
-│   ├── preprocessing.py                  # Data cleaning pipeline
-│   ├── signal.py                         # Friction signals computation
-│   └── utils.py                          # Helper functions
+│   │
+│   └── index/                          # AFI core outputs
+│       ├── aadhaar_friction_index.csv
+│       └── aadhaar_friction_index_ranked.csv
+│
+├── notebooks/                          # Analysis notebooks
+│   ├── 01_exploration.ipynb            # Data exploration & validation
+│   ├── 02_friction_signal.ipynb        # Signal engineering logic
+│   └── 03_visualization.ipynb          # Charts & tables generation
+│
+├── outputs/                            # Final analytical outputs
+│   │
+│   ├── plots/                          # Visual insights (PNG)
+│   │   ├── afi_heatmap_district_time.png
+│   │   ├── afi_trend_selected_districts.png
+│   │   ├── hidden_risk_scatter.png
+│   │   └── lifecycle_flow_imbalance.png
+│   │
+│   ├── tables/                         # Decision-ready tables
+│   │   ├── excel/
+│   │   │   └── afi_analysis_tables.xlsx
+│   │   │
+│   │   ├── parquet/
+│   │   │   ├── afi_summary_by_district.parquet
+│   │   │   ├── afi_summary_by_state.parquet
+│   │   │   ├── friction_signal_summary.parquet
+│   │   │   └── hidden_risk.parquet
+│   │   │
+│   │   ├── sqlite/
+│   │   │   └── aadhaar_friction_tables.db
+│   │   │
+│   │   ├── afi_summary_by_district.csv
+│   │   ├── afi_summary_by_state.csv
+│   │   ├── district_friction_typology.csv
+│   │   ├── friction_signal_summary.csv
+│   │   ├── hidden_risk_table.csv
+│   │   ├── lifecycle_imbalance_table.csv
+│   │   ├── monthly_afi_trends.csv
+│   │   └── top_100_high_friction_records.csv
+│
+├── src/                                # Core business logic
+│   ├── __init__.py
+│   ├── preprocessing.py               # Data cleaning & normalization
+│   ├── signal.py                      # Friction signal computation
+│   ├── index.py                       # Aadhaar Friction Index (AFI) logic
+│   └── utils.py                       # Reusable helpers (IO, paths, math)
+│
+├── requirements.txt                   # Python dependencies
+├── .gitignore                         # Ignore venv, cache, temp files
 ├── LICENSE
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
 ## Getting Started
