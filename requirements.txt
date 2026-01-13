@@ -13,3 +13,4 @@ python-dotenv
 pathlib
 pyarrow
 xlsxwriter
+streamlit
