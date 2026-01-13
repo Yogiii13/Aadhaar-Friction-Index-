@@ -702,8 +702,8 @@ elif page == "ℹ️ About & Methodology":
         Streamlit: v1.38+
         """)
 
-        st.markdown("### 📞 Contact")
-        st.write("For specific inquiries regarding district-level data discrepancies, please contact the Data Science Team.")
+        # st.markdown("### 📞 Contact")
+        # st.write("For specific inquiries regarding district-level data discrepancies, please contact the Data Science Team.")
 
 # ============================================================================
 # FOOTER
@@ -715,7 +715,7 @@ st.markdown(
     <div style='text-align: center; color: #666; padding-bottom: 20px;'>
         <p><strong>Aadhaar Friction Index (AFI) Analysis Dashboard</strong></p>
         <p style='font-size: 0.8rem;'>
-            Developed for Performance Monitoring & Optimization | © 2026 AFI Analytics Team
+            Developed for Performance Monitoring & Optimization | © 2026 Yogesh and Sojwal
         </p>
     </div>
     """, 
