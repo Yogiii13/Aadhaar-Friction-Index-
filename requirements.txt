@@ -11,3 +11,5 @@ lightgbm
 statsmodels
 python-dotenv
 pathlib
+pyarrow
+xlsxwriter
